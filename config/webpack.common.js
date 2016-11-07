@@ -1,41 +1,11 @@
-/**
- * @author: @AngularClass
- */
+<div class="card-container"><h1 x-large class="sample-content">Your Content Here</h1><div>For material design components use the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2"><b>material2</b></a>branch </div><hr><div>For hot module reloading run <pre>npm run start:hmr</pre></div><hr><div><h4>Local State</h4><form (ngSubmit)="submitState(localState.value)" autocomplete="off"><input [value]="localState.value" (input)="localState.value = $event.target.value" placeholder="Submit Local State to App State" autofocus><button md-raised-button color="primary">Submit Value</button></form><!-- <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>Rather than wiring up two-way data-binding ourselves with [value] and (input) we can use Angular's [(ngModel)] syntax
+ <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>--><pre>this.localState= {
+    {
+        localState | json
+    }
+}
 
-const webpack = require('webpack');
-const helpers = require('./helpers');
-
-/*
- * Webpack Plugins
- */
-// problem with copy-webpack-plugin
-const AssetsPlugin = require('assets-webpack-plugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const HtmlElementsPlugin = require('./html-elements-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-
-/*
- * Webpack Constants
- */
-const HMR = helpers.hasProcessFlag('hot');
-const METADATA = {
-    title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
-    baseUrl: '/',
-    isDevServer: helpers.isWebpackDevServer()
-};
-
-/*
- * Webpack configuration
- *
- * See: http://webpack.github.io/docs/configuration.html#cli
- */
-module.exports = function(options) {
-    isProd = options.env === 'production';
+</pre></div></div>    isProd = options.env === 'production';
     return {
 
         /*
