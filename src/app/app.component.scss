@@ -1,0 +1,16 @@
+html,
+body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+    background: radial-gradient(pink, white);
+    margin: 0;
+}
+
+span {
+    &.active {
+        background-color: gray;
+    }
+}
